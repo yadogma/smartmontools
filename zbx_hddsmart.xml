@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zabbix_export>
+    <version>6.4</version>
+    <template_groups>
+        <template_group>
+            <uuid>219c0645eff44d77b6baf3f22db9a9d3</uuid>
+            <name>..Templates</name>
+        </template_group>
+        <template_group>
+            <uuid>b99b90019f9d40f0ad49740402d0ef01</uuid>
+            <name>.Templates - Physical servers</name>
+        </template_group>
+    </template_groups>
+    <templates>
+        <template>
+            <uuid>c001904127554d6fac0c114b8f030a54</uuid>
+            <template>hddsmart</template>
+            <name>hddsmart</name>
+            <groups>
+                <group>
+                    <name>..Templates</name>
+                </group>
+                <group>
+                    <name>.Templates - Physical servers</name>
+                </group>
+            </groups>
+            <discovery_rules>
+                <discovery_rule>
+                    <uuid>cdbbd083e94c473baa97e33cb0135a0e</uuid>
+                    <name>smartctl-physical-disks-discover</name>
+                    <key>physical.disks.discover</key>
+                    <delay>1h</delay>
+                    <item_prototypes>
+                        <item_prototype>
+                            <uuid>a3d19fba9b324dc4a3048655c1643b5c</uuid>
+                            <name>{#DISKNAME} - - Physical disks Overall Health</name>
+                            <key>physical.disks.heals[{#DISKNAME}]</key>
+                            <delay>5m</delay>
+                            <trends>0</trends>
+                            <value_type>TEXT</value_type>
+                            <description>®DOGMA©</description>
+                            <tags>
+                                <tag>
+                                    <tag>Application</tag>
+                                    <value>SMART Data</value>
+                                </tag>
+                            </tags>
+                            <trigger_prototypes>
+                                <trigger_prototype>
+                                    <uuid>e952ae118bbb4bf0bd14ec31e6339325</uuid>
+                                    <expression>find(/hddsmart/physical.disks.heals[{#DISKNAME}],,&quot;like&quot;,&quot;FAIL&quot;)=1</expression>
+                                    <name>{#DISKNAME} - - Overall Health BAD</name>
+                                    <priority>WARNING</priority>
+                                </trigger_prototype>
+                            </trigger_prototypes>
+                        </item_prototype>
+                        <item_prototype>
+                            <uuid>74281f58804b4c8d9f0e18edf978a0b3</uuid>
+                            <name>{#DISKNAME} - - Physical disks Device Model</name>
+                            <key>physical.disks.iinfo[{#DISKNAME},&quot;Device Model&quot;]</key>
+                            <delay>1h</delay>
+                            <trends>0</trends>
+                            <value_type>TEXT</value_type>
+                            <description>®DOGMA©</description>
+                            <tags>
+                                <tag>
+                                    <tag>Application</tag>
+                                    <value>SMART Data</value>
+                                </tag>
+                            </tags>
+                        </item_prototype>
+                        <item_prototype>
+                            <uuid>b1da1e2cea1d42e88962e62b1db73205</uuid>
+                            <name>{#DISKNAME} - - Physical disks Firmware Version</name>
+                            <key>physical.disks.iinfo[{#DISKNAME},&quot;Firmware Version&quot;]</key>
+                            <delay>1h</delay>
+                            <trends>0</trends>
+                            <value_type>TEXT</value_type>
+                            <description>®DOGMA©</description>
+                            <tags>
+                                <tag>
+                                    <tag>Application</tag>
+                                    <value>SMART Data</value>
+                                </tag>
+                            </tags>
+                        </item_prototype>
+                        <item_prototype>
+                            <uuid>217ac6c03a73481cbfe31cb8b51d3af4</uuid>
+                            <name>{#DISKNAME} - - Physical disks Form Factor</name>
+                            <key>physical.disks.iinfo[{#DISKNAME},&quot;Form Factor&quot;]</key>
+                            <delay>1h</delay>
+                            <trends>0</trends>
+                            <value_type>TEXT</value_type>
+                            <description>®DOGMA©</description>
+                            <tags>
+                                <tag>
+                                    <tag>Application</tag>
+                                    <value>SMART Data</value>
+                                </tag>
+                            </tags>
+                        </item_prototype>
+                        <item_prototype>
+                            <uuid>0e1e823b6c8d49c39fa9785f7accfc6e</uuid>
+                            <name>{#DISKNAME} - - Physical disks Model Family</name>
+                            <key>physical.disks.iinfo[{#DISKNAME},&quot;Model Family&quot;]</key>
+                            <delay>1h</delay>
+                            <trends>0</trends>
+                            <value_type>TEXT</value_type>
+                            <description>®DOGMA©</description>
+                            <tags>
+                                <tag>
+                                    <tag>Application</tag>
+                                    <value>SMART Data</value>
+                                </tag>
+                            </tags>
+                        </item_prototype>
+                        <item_prototype>
+                            <uuid>ca9888a7c51349d0bf1bafa11961a118</uuid>
+                            <name>{#DISKNAME} - - Physical disks Rotation Rate</name>
+                            <key>physical.disks.iinfo[{#DISKNAME},&quot;Rotation Rate&quot;]</key>
+                            <delay>1h</delay>
+                            <trends>0</trends>
+                            <value_type>TEXT</value_type>
+                            <description>®DOGMA©</description>
+                            <tags>
+                                <tag>
+                                    <tag>Application</tag>
+                                    <value>SMART Data</value>
+                                </tag>
+                            </tags>
+                        </item_prototype>
+                        <item_prototype>
+                            <uuid>cbb6878707824cb1ba1863a2dbbc902a</uuid>
+                            <name>{#DISKNAME} - - Physical disks Sector Sizes</name>
+                            <key>physical.disks.iinfo[{#DISKNAME},&quot;Sector Sizes&quot;]</key>
+                            <delay>1h</delay>
+                            <trends>0</trends>
+                            <value_type>TEXT</value_type>
+                            <description>®DOGMA©</description>
+                            <tags>
+                                <tag>
+                                    <tag>Application</tag>
+                                    <value>SMART Data</value>
+                                </tag>
+                            </tags>
+                        </item_prototype>
+                        <item_prototype>
+                            <uuid>5a5910e47d6d437393ac6f6e53d03fce</uuid>
+                            <name>{#DISKNAME} - - Physical disks Serial Number</name>
+                            <key>physical.disks.iinfo[{#DISKNAME},&quot;Serial Number&quot;]</key>
+                            <delay>1h</delay>
+                            <trends>0</trends>
+                            <value_type>TEXT</value_type>
+                            <description>®DOGMA©</description>
+                            <tags>
+                                <tag>
+                                    <tag>Application</tag>
+                                    <value>SMART Data</value>
+                                </tag>
+                            </tags>
+                        </item_prototype>
+                        <item_prototype>
+                            <uuid>ff5b7b3e0de340709939d0c96f06335c</uuid>
+                            <name>{#DISKNAME} - - Physical disks User Capacity</name>
+                            <key>physical.disks.iinfo[{#DISKNAME},&quot;User Capacity&quot;]</key>
+                            <delay>1h</delay>
+                            <trends>0</trends>
+                            <value_type>TEXT</value_type>
+                            <description>®DOGMA©</description>
+                            <tags>
+                                <tag>
+                                    <tag>Application</tag>
+                                    <value>SMART Data</value>
+                                </tag>
+                            </tags>
+                        </item_prototype>
+                        <item_prototype>
+                            <uuid>350eda28941640d6833da0dbac52a29e</uuid>
+                            <name>{#DISKNAME} - - Число секторов кандидатов на перенос в резервную зону</name>
+                            <key>physical.disks.rawww[{#DISKNAME},Current_Pending_Sector]</key>
+                            <delay>5m</delay>
+                            <units>raz</units>
+                            <description>Число секторов кандидатов на перенос в резервную зону. Помечены как не надёжные. При последующих корректных операциях атрибут может быть снят.
+
+https://ru.wikipedia.org/wiki/S.M.A.R.T.
+®DOGMA©</description>
+                            <tags>
+                                <tag>
+                                    <tag>Application</tag>
+                                    <value>SMART Data</value>
+                                </tag>
+                            </tags>
+                        </item_prototype>
+                        <item_prototype>
+                            <uuid>55329ecaf96b46f4be89116d4d611bc2</uuid>
+                            <name>{#DISKNAME} - - Число циклов аварийных выключений</name>
+                            <key>physical.disks.rawww[{#DISKNAME},Power-Off_Retract_Count]</key>
+                            <delay>5m</delay>
+                            <units>raz</units>
+                            <description>Число циклов аварийных выключений.
+
+https://ru.wikipedia.org/wiki/S.M.A.R.T.
+®DOGMA©</description>
+                            <tags>
+                                <tag>
+                                    <tag>Application</tag>
+                                    <value>SMART Data</value>
+                                </tag>
+                            </tags>
+                        </item_prototype>
+                        <item_prototype>
+                            <uuid>22940508540e4d08ae3c905ce8cd5364</uuid>
+                            <name>{#DISKNAME} - - Кол-во включений/выключений диска</name>
+                            <key>physical.disks.rawww[{#DISKNAME},Power_Cycle_Count]</key>
+                            <delay>1h</delay>
+                            <units>raz</units>
+                            <description>Тип: накапливающий
+Описание: содержит количество полных циклов &quot;включение-отключение&quot; диска
+
+https://ru.wikipedia.org/wiki/S.M.A.R.T.
+®DOGMA©</description>
+                            <tags>
+                                <tag>
+                                    <tag>Application</tag>
+                                    <value>SMART Data</value>
+                                </tag>
+                            </tags>
+                        </item_prototype>
+                        <item_prototype>
+                            <uuid>2387916fbb3043ba86659a5e02702435</uuid>
+                            <name>{#DISKNAME} - - Частота ошибок при чтении данных</name>
+                            <key>physical.disks.rawww[{#DISKNAME},Raw_Read_Error_Rate]</key>
+                            <delay>5m</delay>
+                            <units>raz</units>
+                            <description>Частота ошибок при чтении данных с жёсткого диска. Происхождение их обусловлено аппаратной частью винчестера.
+
+https://ru.wikipedia.org/wiki/S.M.A.R.T.
+®DOGMA©</description>
+                            <tags>
+                                <tag>
+                                    <tag>Application</tag>
+                                    <value>SMART Data</value>
+                                </tag>
+                            </tags>
+                        </item_prototype>
+                        <item_prototype>
+                            <uuid>a966e3f5177a45afbf737b2b6c372e6a</uuid>
+                            <name>{#DISKNAME} - - Число операций переназначения секторов</name>
+                            <key>physical.disks.rawww[{#DISKNAME},Reallocated_Sector_Ct]</key>
+                            <delay>5m</delay>
+                            <units>raz</units>
+                            <description>Число операций переназначения секторов. При обнаружении повреждённого сектора на винчестере, информация из него помечается и переносится в специально отведённую зону, происходит утилизация bad блоков, с последующим консервированием этих мест на диске. Этот процесс называют remapping. Чем больше значение Reallocated Sectors Count, тем хуже состояние поверхности дисков — физический износ поверхности. Поле raw value содержит общее количество переназначенных секторов.
+
+https://ru.wikipedia.org/wiki/S.M.A.R.T.
+®DOGMA©</description>
+                            <tags>
+                                <tag>
+                                    <tag>Application</tag>
+                                    <value>SMART Data</value>
+                                </tag>
+                            </tags>
+                            <trigger_prototypes>
+                                <trigger_prototype>
+                                    <uuid>f0b9446a9ead4b228038606cfad6ecbe</uuid>
+                                    <expression>(last(/hddsmart/physical.disks.rawww[{#DISKNAME},Reallocated_Sector_Ct],#1)&lt;&gt;last(/hddsmart/physical.disks.rawww[{#DISKNAME},Reallocated_Sector_Ct],#2))=1</expression>
+                                    <name>{#DISKNAME} - - Число переназначения секторов: {ITEM.LASTVALUE}</name>
+                                    <priority>WARNING</priority>
+                                </trigger_prototype>
+                            </trigger_prototypes>
+                        </item_prototype>
+                        <item_prototype>
+                            <uuid>06d8582e2b5a4e3d8e346707d9d52254</uuid>
+                            <name>{#DISKNAME} - - Частота ошибок при позиционировании блока магнитных головок</name>
+                            <key>physical.disks.rawww[{#DISKNAME},Seek_Error_Rate]</key>
+                            <delay>5m</delay>
+                            <units>raz</units>
+                            <description>Частота ошибок при позиционировании блока магнитных головок. Чем больше значение, тем хуже состояние механики, или поверхности жёсткого диска.
+
+https://ru.wikipedia.org/wiki/S.M.A.R.T.
+®DOGMA©</description>
+                            <tags>
+                                <tag>
+                                    <tag>Application</tag>
+                                    <value>SMART Data</value>
+                                </tag>
+                            </tags>
+                            <trigger_prototypes>
+                                <trigger_prototype>
+                                    <uuid>2d92a19ada69418caae96040bfd8442d</uuid>
+                                    <expression>(last(/hddsmart/physical.disks.rawww[{#DISKNAME},Seek_Error_Rate],#1)&lt;&gt;last(/hddsmart/physical.disks.rawww[{#DISKNAME},Seek_Error_Rate],#2))=1</expression>
+                                    <name>{#DISKNAME} - - Частота ошибок при позиционировании: {ITEM.LASTVALUE}</name>
+                                    <priority>WARNING</priority>
+                                </trigger_prototype>
+                            </trigger_prototypes>
+                        </item_prototype>
+                        <item_prototype>
+                            <uuid>e4c0d40989ba4f88bf6050788afe98d1</uuid>
+                            <name>{#DISKNAME} - - Число повторных попыток раскрутки дисков до рабочей скорости</name>
+                            <key>physical.disks.rawww[{#DISKNAME},Spin_Retry_Count]</key>
+                            <delay>5m</delay>
+                            <units>raz</units>
+                            <description>Число повторных попыток раскрутки дисков до рабочей скорости в случае, если первая попытка была неудачной.
+
+https://ru.wikipedia.org/wiki/S.M.A.R.T.
+®DOGMA©</description>
+                            <tags>
+                                <tag>
+                                    <tag>Application</tag>
+                                    <value>SMART Data</value>
+                                </tag>
+                            </tags>
+                        </item_prototype>
+                        <item_prototype>
+                            <uuid>2d27dd6db68b460eac7d569331ca6120</uuid>
+                            <name>{#DISKNAME} - - Время раскрутки шпинделя из состояния покоя</name>
+                            <key>physical.disks.rawww[{#DISKNAME},Spin_Up_Time]</key>
+                            <delay>1h</delay>
+                            <units>s</units>
+                            <description>Время раскрутки шпинделя из состояния покоя (0 rpm) до рабочей скорости. В поле Raw_value содержится время в миллисекундах/секундах в зависимости от производителя
+
+https://ru.wikipedia.org/wiki/S.M.A.R.T.
+®DOGMA©</description>
+                            <tags>
+                                <tag>
+                                    <tag>Application</tag>
+                                    <value>SMART Data</value>
+                                </tag>
+                            </tags>
+                        </item_prototype>
+                        <item_prototype>
+                            <uuid>ebfaefa3207c4c4981c4e363e79c7ce8</uuid>
+                            <name>{#DISKNAME} - - Полное число запусков/остановок шпинделя</name>
+                            <key>physical.disks.rawww[{#DISKNAME},Start_Stop_Count]</key>
+                            <delay>5m</delay>
+                            <units>raz</units>
+                            <description>Полное число запусков, остановок шпинделя. Иногда в том числе количество включений режима энергосбережения. В поле raw value хранится общее количество запусков/остановок жёсткого диска.
+
+https://ru.wikipedia.org/wiki/S.M.A.R.T.
+®DOGMA©</description>
+                            <tags>
+                                <tag>
+                                    <tag>Application</tag>
+                                    <value>SMART Data</value>
+                                </tag>
+                            </tags>
+                        </item_prototype>
+                        <item_prototype>
+                            <uuid>691b13e92f0e40eab394e8c85583a40f</uuid>
+                            <name>{#DISKNAME} - - Температура диска</name>
+                            <key>physical.disks.rawww[{#DISKNAME},Temperature_Celsius]</key>
+                            <delay>5m</delay>
+                            <units>°C</units>
+                            <description>Температура диска °C
+https://ru.wikipedia.org/wiki/S.M.A.R.T.
+®DOGMA©</description>
+                            <tags>
+                                <tag>
+                                    <tag>Application</tag>
+                                    <value>SMART Data</value>
+                                </tag>
+                            </tags>
+                        </item_prototype>
+                        <item_prototype>
+                            <uuid>803c19f8e9a74804b2b722d339ee4d23</uuid>
+                            <name>{#DISKNAME} - - Число ошибок при передаче данных по внешнему интерфейсу</name>
+                            <key>physical.disks.rawww[{#DISKNAME},UDMA_CRC_Error_Count]</key>
+                            <delay>5m</delay>
+                            <units>raz</units>
+                            <description>Число ошибок при передаче данных по внешнему интерфейсу.
+
+https://ru.wikipedia.org/wiki/S.M.A.R.T.
+®DOGMA©</description>
+                            <tags>
+                                <tag>
+                                    <tag>Application</tag>
+                                    <value>SMART Data</value>
+                                </tag>
+                            </tags>
+                        </item_prototype>
+                    </item_prototypes>
+                    <graph_prototypes>
+                        <graph_prototype>
+                            <uuid>dd9b9867a1fa418cb8de8d3b41f82b58</uuid>
+                            <name>Disk: {#DISKNAME} Temperature</name>
+                            <ymin_type_1>FIXED</ymin_type_1>
+                            <graph_items>
+                                <graph_item>
+                                    <color>F63100</color>
+                                    <calc_fnc>ALL</calc_fnc>
+                                    <item>
+                                        <host>hddsmart</host>
+                                        <key>physical.disks.rawww[{#DISKNAME},Temperature_Celsius]</key>
+                                    </item>
+                                </graph_item>
+                            </graph_items>
+                        </graph_prototype>
+                    </graph_prototypes>
+                </discovery_rule>
+            </discovery_rules>
+            <macros>
+                <macro>
+                    <macro>{$SCRIPT_PATH}</macro>
+                    <value>/etc/zabbix/zabbix_agentd.d/</value>
+                </macro>
+            </macros>
+        </template>
+    </templates>
+</zabbix_export>
