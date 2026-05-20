@@ -11,3 +11,7 @@ Linux linuxname 5.4.0-166-generic #183-Ubuntu SMP Mon Oct 2 11:28:33 UTC 2023 x8
 
 Tested on server side:
 Zabbix 6.4.7
+
+Добавить шаблон в графическом интерфейсе Data collection -> Templates -> Import.
+Потом добавить нужный шаблон хосту.
+<img width="634" height="213" alt="AdobeExpressPhotos_95cc3e905fcc42b0b0a8037a8e041d74_CopyEdited" src="https://github.com/user-attachments/assets/5f723733-2bf8-482e-878d-a211fbcff650" />
